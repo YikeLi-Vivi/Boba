@@ -1,0 +1,693 @@
+:root{  
+    background: #F8EDE3;
+    /* boba style */
+    --boba-background-image: radial-gradient(#030303 5.5px, transparent 5.5px), radial-gradient(#030303 5.5px, transparent 5.5px);
+    --boba-background-size: 28px 28px;
+    --boba-background-position: 0 0, 14px 14px;
+    --boba-background-color: rgba(255, 182, 71, 1);
+    --boba-color:red;
+    --boba-bottom:0;
+
+    /* tea style */
+    --jasmine-background-color:rgba(226, 194, 185,0.6);
+    --matcha-background-color:rgba(173, 194, 169,0.6);
+    --oolong-background-color:rgba(83, 53, 53,0.6);
+    --regular-background-color:rgba(216, 179, 132,0.6);
+    --thai-background-color:rgba(163, 66, 60,0.6);
+    --oolong-bottom:0;
+    --jasmine-bottom:0;
+    --matcha-bottom:0;
+    --regular-bottom:0;
+    --thai-bottom:0;
+   
+
+    /* milk style  */
+    --oatmilk-background-color:rgba(223, 211, 195,0.6); 
+    --milk-background-color:rgba(250, 245, 239, 0.6);
+    --soymilk-background-color:rgba(246, 234, 190,0.6);
+    --soymilk-bottom:0;
+    --milk-bottom:0;
+    --oatmilk-bottom:0;
+
+
+    /* other element */
+    --taro-backround-color:rgba(217, 215, 241,1);
+    --redbean-background-color:rgba(187, 55, 26,1);
+    --sugar-background-color:rgba(250, 243, 243,1);
+    --blacksugar-background-color:rgba(92, 61, 46,1);
+    --oat-background-color:rgba(253, 239, 239,1);
+    --ice-background-color:rgba(162, 219, 250,1);
+    --taro-bottom:0;
+    --redbean-bottom:0;
+    --sugar-bottom:0;
+    --blacksugar-bottom:0;
+    --oat-bottom:0;
+    --oreo-bottom:0;
+    --ice-bottom:0;
+
+    
+    --sugar-100:15%;
+    --sugar-70:10.5%;
+    --sugar-50:7.5%;
+    --sugar-30:4%;
+    --sugar-0:0%;
+
+    --less-ice:6%;
+    --reg-ice:10%;
+    --more-ice:15%;
+
+    --add-bottom:-100%;
+    --extra-bottom:-100%;
+    --ingre-bottom:8%;
+}
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+}
+body{
+    position: relative;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+.cup{
+    display: block;
+    position: relative;
+    width: 25%;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    height: 30vw;
+    border-radius: 5% 5% 33% 33% / 25% 25% 75% 75%;
+    border: 10px black solid;
+    border-bottom: 15px black solid;
+    transition: all 1s ease;
+}
+
+.cup.default{
+    margin-left:35%;
+}
+
+.straw{
+    display:block;
+    position: absolute;
+    bottom: 0;
+    left: 11.25vw;
+    width: 1.5vw;
+    height: 35vw;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgb(253, 250, 246) 8px, rgb(253, 250, 246) 17px);
+    background-color: rgb(189, 210, 182); 
+    z-index: -1; 
+}
+
+.straw::after{
+    content:"";
+    position: absolute;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgb(253, 250, 246) 8px, rgb(253, 250, 246) 17px);
+    background-color:rgb(189, 210, 182); 
+    height: 1.5vw;
+    top:-1vw;
+    width: 5vw;
+    border-radius: 30% 5% 5% 29% / 70% 25% 25% 29%;
+}
+
+
+
+  .menu{
+    display: grid;
+    position: absolute;
+    grid-gap: 1.5vh;
+    grid-template-rows: repeat(10, 50px);
+    grid-template-columns: 220px;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    left:20%;
+    top: 12vw;
+    transition: all 1s ease;
+  }
+  
+
+  .menu button, #diybutton {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    background: rgb(253, 250, 246);
+    outline: none;
+    font-size: 1.5rem;
+    border: 2px solid rgb(121, 135, 119);
+    box-shadow: none;
+    color: rgb(121, 135, 119);
+    box-sizing: border-box;
+    border-radius: 2vh;
+    transition: all 1s ease;
+  }
+
+
+  .menu button:hover {
+    cursor: pointer;
+    border-width: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 1.7rem;
+  }
+
+
+h1{
+    font-size: 5vh;
+}
+
+.build{
+    position: absolute;
+    box-sizing: border-box;
+    right: 15%;
+    top: 5vw;
+    color: rgb(57, 49, 29);
+    font-weight: bolder;
+    transition: all 1s ease;
+}
+
+
+#diybutton {
+    width: 250px;
+    border: solid rgb(57, 49, 29)2px;
+    height: 65px;
+    color: rgb(57, 49, 29);
+    font-size: 30px;
+    margin-left: 35%;
+}
+
+
+#diybutton:hover{
+    cursor: pointer;
+    border-width: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 35px;
+    transition:  all 1s linear;
+}
+
+
+
+.gridcontainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top:10vh;
+    column-gap:8vh;
+    row-gap: 2.3vh;
+    font-size: 2rem;
+    line-height:2.5rem;
+    margin-bottom: 10vh;
+}
+
+.addelem{
+    grid-column: 1/3;
+}
+
+input[type=checkbox]{
+    width: 40px;
+}
+.filling {
+    position: absolute;
+    left: 0;
+    width:100%;
+    height:28.5vw;
+    overflow: hidden;
+    background-color: var(--main-bg-color);
+    bottom: 1vw;
+    top:0;
+    text-align: center;
+    border-radius: 2% 2% 33% 33% / 25% 25% 75% 75%;
+    z-index: 11;
+  }
+
+
+.filling div {
+    position: absolute;
+    width: 100%;
+    transition: all 1s linear;
+    color: rgb(57, 49, 29);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 0;
+    overflow: hidden;
+    font-size: 2vw;
+    height: 100%;
+    bottom: -100%;
+    box-sizing: border-box;
+}
+.ice{
+    font-size: 1.5vw;
+}
+
+
+
+
+.filling.reset.originaltea{
+    --regular-bottom:0;
+    --milk-bottom:-30%;
+    --sugar-bottom:-70%;
+    --boba-bottom:-80%;
+}
+
+
+.filling.reset.jasminetea{
+    --jasmine-bottom:0;
+    --milk-bottom:-30%;
+    --sugar-bottom:-70%;
+    --boba-bottom:-80%;
+}
+
+.filling.reset.oolongtea{
+    --oolong-bottom:0;
+    --milk-bottom:-30%;
+    --sugar-bottom:-70%;
+    --boba-bottom:-80%;
+}
+
+
+.filling.reset.tarotea{
+    --regular-bottom:0;
+    --milk-bottom:-30%;
+    --sugar-bottom:-60%;
+    --taro-bottom:-70%;
+    --boba-bottom:-90%;
+}
+
+
+.filling.reset.oatmilktea{
+    --regular-bottom:0;
+    --oatmilk-bottom:-30%;
+    --sugar-bottom:-70%;
+    --boba-bottom:-80%;
+}
+
+.filling.reset.matchatea{
+    --matcha-bottom:0;
+    --milk-bottom:-30%;
+    --sugar-bottom:-70%;
+    --redbean-bottom:-80%;
+    --boba-bottom:-90%;
+}
+
+.filling.reset.brown_sugartea{
+    --regular-bottom:0;
+    --milk-bottom:-30%;
+    --blacksugar-bottom:-70%;
+    --boba-bottom:-80%;
+}
+
+
+.filling.reset.thaitea{
+    --thai-bottom:0;
+    --milk-bottom:-30%;
+    --sugar-bottom:-70%;
+    --boba-bottom:-80%;
+}
+
+
+
+.filling.reset.oreotea{
+    --regular-bottom:0;
+    --milk-bottom:-30%;
+    --sugar-bottom:-70%;
+    --oreo-bottom:-80%;
+    --boba-bottom:-90%;
+}
+
+
+.filling.reset.black_tea_base{
+    --regular-bottom:0;
+}
+
+.filling.reset.thai_tea_base{
+    --thai-bottom:0;
+}
+
+.filling.reset.jasmine_tea_base{
+    --jasmine-bottom:0;
+}
+
+.filling.reset.matcha_base{
+    --matcha-bottom:0;
+}
+
+.filling.reset.oolong_tea_base{
+    --oolong-bottom:0;
+}
+
+
+.filling.reset.milk_base{
+    --milk-bottom:-30%;
+}
+
+.filling.reset.milk_base{
+    --milk-bottom:-30%;
+}
+
+.filling.reset.soy_milk_base{
+    --soymilk-bottom:-30%;
+}
+
+.filling.reset.oat_milk_base{
+    --oatmilk-bottom:-30%;
+}
+
+
+.filling.reset.boba_add{
+    --boba-bottom: calc(var(--extra-bottom) + var(--ingre-bottom)) ;
+    --oreo-bottom: var(--boba-bottom);
+    --taro-bottom: var(--boba-bottom);
+    --oat-bottom: var(--boba-bottom);
+    --redbean-bottom:  var(--boba-bottom);
+}
+.filling.reset.oreo_add{
+    --oreo-bottom: calc(var(--boba-bottom) + var(--ingre-bottom)) ;
+    --taro-bottom:var(--oreo-bottom);
+    --oat-bottom: var(--oreo-bottom);
+    --redbean-bottom: var(--oreo-bottom);
+}
+
+.filling.reset.taro_add{
+    --taro-bottom: calc(var(--oreo-bottom) + var(--ingre-bottom)) ;
+    --oat-bottom: var(--taro-bottom) ;
+    --redbean-bottom: var(--taro-bottom);
+}
+
+.filling.reset.oat_add{
+    --oat-bottom: calc(var(--taro-bottom) + var(--ingre-bottom)) ;
+    --redbean-bottom: var(--oat-bottom);
+}
+.filling.reset.redbean_add{
+    --redbean-bottom: calc(var(--oat-bottom) + var(--ingre-bottom)) ;
+}
+
+.filling.reset.no_ice{
+    --ice-bottom: var(--redbean-bottom); 
+    
+}
+
+.filling.reset.warm{
+    --ice-bottom: var(--redbean-bottom); 
+    
+}
+
+
+.filling.reset.less_ice{
+    --ice-bottom: calc(var(--redbean-bottom) + var(--less-ice)); 
+    
+}
+
+.filling.reset.reg_ice{
+    --ice-bottom: calc(var(--redbean-bottom) + var(--reg-ice)); 
+   
+}
+.filling.reset.more_ice{
+    --ice-bottom: calc(var(--redbean-bottom) + var(--more-ice)); 
+
+    
+}
+
+.filling.reset.sugar100{
+    --sugar-bottom: calc(var(--ice-bottom) + var(--sugar-100)); 
+}
+
+.filling.reset.sugar70{
+    --sugar-bottom: calc(var(--ice-bottom) + var(--sugar-70)); 
+}
+
+.filling.reset.sugar50{
+    --sugar-bottom: calc(var(--ice-bottom) + var(--sugar-50)); 
+}
+
+.filling.reset.sugar30{
+    --sugar-bottom: calc(var(--ice-bottom) + var(--sugar-30)); 
+}
+
+
+.filling.reset.sugar0{
+    --sugar-bottom: var(--add-bottom); 
+}
+
+.filling.reset.empty{
+    --jasmine-bottom:-100%;
+    --matcha-bottom:-100%;
+    --regular-bottom:-100%;
+    --soymilk-bottom:-100%;
+    --milk-bottom:-100%;
+    --oatmilk-bottom:-100%;
+    --taro-bottom:-100%;
+    --redbean-bottom:-100%;
+    --sugar-bottom:-100%;
+    --blacksugar-bottom:-100%;
+    --boba-bottom:-100%;
+    --oolong-bottom:-100%;
+    --oat-bottom:-100%;
+    --oreo-bottom:-100%;
+    --thai-bottom:-100%;
+}
+
+div.matcha{
+    background:var(--matcha-background-color);
+    bottom:var(--matcha-bottom);
+    z-index: 2;
+}
+
+div.thai{
+    background:var(--thai-background-color);
+    bottom:var(--thai-bottom);
+    z-index: 2;
+}
+
+
+div.jasmine{
+    background:var(--jasmine-background-color);
+    bottom: var(--jasmine-bottom);
+    z-index: 2;
+}
+
+div.regular{
+    background: var(--regular-background-color);
+    bottom: var(--regular-bottom);
+    z-index: 2;
+}
+
+div.oolong{
+    background:var(--oolong-background-color);
+    bottom:var(--oolong-bottom);
+    z-index: 2;
+}
+
+
+div.milk {
+    background: var(--milk-background-color);
+    bottom: var(--milk-bottom);
+    z-index: 3;
+}
+
+div.oatmilk{
+    background:var(--oatmilk-background-color);
+    bottom:  var(--oatmilk-bottom);
+    z-index: 3;
+}
+
+div.soymilk{
+    background:var(--soymilk-background-color);
+    bottom:var(--soymilk-bottom);
+    z-index: 3;
+}
+
+
+div.sugar{
+    background:var(--sugar-background-color);
+    bottom:var(--sugar-bottom);
+    z-index: 4;
+}
+
+div.blacksugar{
+    background:var(--blacksugar-background-color);
+    bottom:var(--blacksugar-bottom);
+    z-index: 4;
+}
+
+
+div.redbean{
+    background:var(--redbean-background-color);
+    bottom:var(--redbean-bottom);
+    z-index: 6;
+}
+
+
+div.oat{
+    background:var(--oat-background-color);
+    bottom:var(--oat-bottom);
+    z-index: 7;
+}
+
+div.taro{
+    background:var(--taro-backround-color);
+    bottom:var(--taro-bottom);
+    z-index: 8;
+}
+
+div.oreo-piece{
+    background: linear-gradient(135deg, #000000 25%, transparent 25%) -13px 0, linear-gradient(225deg, #000000 25%, transparent 25%) -13px 0, linear-gradient(315deg, #000000 25%, transparent 25%), linear-gradient(45deg, #000000 25%, transparent 25%);
+    background-size: 26px 26px;
+    
+    background-color: #ffffff;
+    bottom:var(--oreo-bottom);
+    z-index: 9;
+}
+
+div.ice{
+    background: var(--ice-background-color);
+    bottom: var(--ice-bottom);
+    z-index: 5;
+}
+
+
+div.boba{
+    background: var(--boba-background-color);
+    background-image: var(--boba-background-image);
+    background-size: var(--boba-background-size);
+    background-position: var(--boba-background-position);
+    bottom: var(--boba-bottom);
+    z-index: 10;
+}
+
+
+.steamcontainer{
+    display: none;
+    transition: all 1s linear;
+
+}
+
+.show{
+    display: grid;
+    position: absolute;
+    left:7%;
+    right:7%;
+    top: -20%;
+    grid-template-columns: repeat(6, 1fr);
+    transition: all 1s linear;
+
+}
+
+.steam{
+    
+    width: 4vh;
+    height: 7vh;
+    border-left:#000 solid 4px;
+    border-radius: 50%;
+}
+
+
+.steam1{
+    width: 4vh;
+    height: 7vh;
+    border-left:#000 solid 4px;
+    border-radius: 50%;
+}
+
+
+.steam2{
+   
+    width: 4vh;
+    height: 7vh;
+    border-left:#000 solid 4px;
+    border-radius: 50%;
+}
+
+
+.steam3{
+    width: 4vh;
+    height: 7vh;
+    border-right:#000 solid 4px;
+    border-radius: 50%;
+}
+
+.steam4{
+   
+    width: 4vh;
+    height: 7vh;
+    border-right:#000 solid 4px;
+    border-radius: 50%;
+}
+
+.steam5{
+   
+    width: 4vh;
+    height: 7vh;
+    border-right:#000 solid 4px;
+    border-radius: 50%;
+}
+
+
+
+.filling.reset{
+    --jasmine-bottom:-100%;
+    --matcha-bottom:-100%;
+    --regular-bottom:-100%;
+    --soymilk-bottom:-100%;
+    --milk-bottom:-100%;
+    --oatmilk-bottom:-100%;
+    --taro-bottom:-100%;
+    --redbean-bottom:-100%;
+    --sugar-bottom:-100%;
+    --blacksugar-bottom:-100%;
+    --boba-bottom:-100%;
+    --oolong-bottom:-100%;
+    --oat-bottom:-100%;
+    --oreo-bottom:-100%;
+    --thai-bottom:-100%;
+    --ice-bottom:-100%;
+}
+
+
+
+.hidden{
+    display: none;
+}
+
+
+.menu button.selected{
+    border-width: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    font-size: 1.7rem;
+}
+
+.cup.diymode{
+  margin-left: -40%;
+}
+#from_menu{
+    margin-left: -40%;
+    background: rgb(253, 250, 246);
+    outline: none;
+    box-sizing: border-box;
+    transition: all 1s ease;
+    width: 250px;
+    border: solid rgb(57, 49, 29)2px;
+    height: 65px;
+    color: rgb(57, 49, 29);
+    border-radius: 2vh;
+    font-size: 30px;
+}
+
+
+.from_menu:hover{
+    cursor: pointer;
+    border-width: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 35px;
+    transition:  all 1s linear;  
+}

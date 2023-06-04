@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Bobo Tea Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+
+        function addclass() {
+            document.getElementById('diybutton').style.borderWidth = "4px";
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <div id="menu" class="menu">
+        <button id="originaltea"> Original Milk Tea</button>
+        <button id="jasminetea">Jasmine Milk Tea</button>
+        <button id="oolongtea">Oolong Milk Tea</button>
+        <button id="tarotea">Taro Milk Tea</button>
+        <button id="oatmilktea">Oat Milk Tea</button>
+        <button id="matchatea">Matcha Milk Tea</button>
+        <button id="brown_sugartea">Brown Sugar Milk Tea</button>
+        <button id="thaitea">Thai Milk Tea</button>
+        <button id="oreotea">Oreo Milk Tea</button>
+    </div>
+
+    <div class="container">
+       <h1>Choose Your Drink</h1>
+
+        <div id="cup" class="cup default">
+            <div class="straw">
+            </div>
+
+            <div class="steamcontainer">
+                <div class="steam"></div>
+                <div class="steam1 "></div>
+                <div class="steam2"></div>
+                <div class="steam3"></div>
+                <div class="steam4"></div>
+                <div class="steam5"></div>
+             </div>
+
+            <div class="filling reset" >
+
+                
+
+                <div class="boba" style="color:rgb(249, 243, 223)"> boba</div>
+                <div class="ice">ice</div>
+                <div class="redbean" style="color:rgb(249, 243, 223)">Redbean</div>
+        
+                <div class="oat">Oat</div>
+                <div class="taro">Taro</div>
+                <div class="oreo-piece">Oreo</div>
+                <div class="sugar">Sugar</div>
+                <div class="blacksugar" style="color:rgb(249, 243, 223)">Black Sugar</div>
+                
+
+                <div class="milk"> milk </div>
+                <div class="oatmilk">oat milk</div>
+                <div class="soymilk"> soy milk</div>
+
+                <div class="matcha">Matcha</div>
+                <div class="oolong" style="color:rgb(249, 243, 223)">Oolong Tea</div>
+                <div class="jasmine">Jasmine Tea</div>
+                <div class="regular">Black Tea</div>
+                <div class="thai">Thai Tea</div>
+
+                
+            </div>
+
+        </div>
+
+        <button id="diybutton"   onclick="change_to_diy()"> Build Your Own </button>
+        <button id="from_menu" class="from_menu hidden"  onclick="change_to_menu()"> Select from Menu </button>
+    </div>
+
+
+
+    <div id="build" class="build hidden">
+        <form action="ordersummary.php" method ="post" class="DIY">
+
+
+            <div class="gridcontainer">
+                <div class="gridelem">
+                    <label for="tea"> Tea </label> <br>
+                    <input type="radio" name="tea" value="black_tea_base">Black Tea <br>
+                    <input type="radio" name="tea" value="thai_tea_base">Thai Tea <br>
+                    <input type="radio" name="tea" value="jasmine_tea_base">Jasmine Tea <br>
+                    <input type="radio" name="tea" value="oolong_tea_base">Oolong Tea <br>
+                    <input type="radio" name="tea" value="matcha_base">Matcha <br>
+                </div>
+
+                <div class="gridelem">
+                    <label for="milk"> Milk</label> <br>
+                    <input type="radio" name="milk" value="milk_base">Whole Milk<br>
+                     <input type="radio" name="milk" value="soy_milk_base">Soy Milk <br>
+                    <input type="radio" name="milk" value="oat_milk_base">Oat Milk<br>
+                </div>
+                
+                <div class="gridelem">
+                    <label for="sugar"> Sugar Level</label> <br>
+                    <input type="radio" name="sugar" value="sugar100">100%<br>
+                    <input type="radio" name="sugar" value="sugar70">70%<br>
+                    <input type="radio" name="sugar" value="sugar50">50%<br>
+                    <input type="radio" name="sugar" value="sugar30">30%<br>
+                    <input type="radio" name="sugar" value="sugar0">Zero Sugar<br>
+                </div>
+
+                <div class="gfrid elem">
+                    <label for="tem">Temperature</label> <br>
+                    <input type="radio" name="tem" value="warm">Warm<br>
+                    <input type="radio" name="tem" value="no_ice">No Ice<br>
+                    <input type="radio" name="tem" value="less_ice">Less Ice<br>
+                    <input type="radio" name="tem" value="reg_ice">Regular Ice<br>
+                    <input type="radio" name="tem" value="more_ice">More Ice<br>
+                </div>
+
+                <div class="gridelem addelem">
+                    <label for="add">Add</label> <br>
+                    <input type="checkbox" name="redbean" value="redbean_add"> Red Bean 
+                    <input type="checkbox" name="oat" value="oat_add"> Oat 
+                    <input type="checkbox" name="taro" value="taro_add"> Taro <br>
+                    <input type="checkbox" name="oreo" value="oreo_add"> Oreo 
+                    <input type="checkbox" name="boba" value="boba_add"> boba
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
